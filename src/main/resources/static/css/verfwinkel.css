@@ -1,0 +1,106 @@
+html {
+    background-color: #F2E8DC;
+    color: #401A04;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+/*NAV*/
+
+.navigatieBar {
+    width: 100%;
+    border-bottom: #401A04 solid 2px;
+    font-size: 2rem;
+}
+
+.linkNav {
+    text-decoration: none;
+    color: #401A04;
+    margin-right: 20px;
+}
+
+.eersteLinkNav {
+    margin-right: 625px;
+    font-weight: bolder;
+}
+
+/*KNOPPEN VERFPOTTEN LIJST*/
+
+.euroteken {
+    display: inline-block;
+}
+
+.euroteken + p {
+    display: inline-block;
+}
+
+.verfpottenKnop {
+    background-color: #F2D680;
+    color: #401A04;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 1px 1px 1px darkgrey;
+    display: block;
+    margin: 10px 40px;
+    width: 400px;
+    font-size: 1.2em;
+    padding: 1em;
+
+}
+
+.verfpottenKnop:hover {
+    background-color: #F2C230;
+}
+
+.verfpottenKnop:active {
+    background-color: #F2EA7E;
+    color: #401A04;
+}
+
+.kleineKnop {
+    background-color: #F27B35;
+    color: #401A04;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 1px 1px 1px darkgrey;
+}
+
+.kleineKnop:hover {
+    background-color: #401A04;
+    color: #F2E8DC;
+}
+
+.filterButton {
+    width: 2em;
+    padding: 0.2em;
+    margin: 0 2px 10px;
+}
+
+.verticalmargin{
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+/*DETAILPAGINA*/
+
+.row1 {
+    margin: 100px 0 20px 0;
+}
+
+.row1content {
+    margin: 0 50px;
+}
+
+div.info {
+    width: 200px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+div.info + div {
+    display: inline-block;
+}
+

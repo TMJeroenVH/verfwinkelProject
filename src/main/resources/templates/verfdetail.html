@@ -1,0 +1,36 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Verfpot</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/verfwinkel.css}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments/header :: header">Hier komt de header</div>
+<div class="row1">
+    <div class="row1content" th:if="${verfpot}">
+        <div>
+            <h2 th:text="${verfpot.getNaam()}">Naam verfpot</h2>
+        </div>
+        <div>
+            <div class="info">Naam: </div>
+            <div><p th:text="${verfpot.getNaam()}">Naam verfpot hier</p></div><br>
+            <div class="info">Ondergrond: </div>
+            <div><p th:text="${verfpot.getOndergrond()}">Ondergrond verf</p></div><br>
+            <div class="info">Kleur:</div>
+            <div><p th:text="${verfpot.getKleurAanbod()}">Kleur verf</p></div><br>
+            <div class="info">Verpakking: </div>
+            <div><p th:text="${verfpot.getVerpakkingMogelijkheden()}">Verpakking verfpot</p></div><br>
+            <div class="info">Prijs (1L):</div>
+            <div><p th:text="${'€'} + ${verfpot.getPrijs()}">Prijs verfpot</p></div><br>
+        </div>
+    </div>
+    <div class="row1content" th:unless="${verfpot}">
+        <p>Er is geen verfpot gekozen</p>
+    </div>
+</div>
+</body>
+</html>
