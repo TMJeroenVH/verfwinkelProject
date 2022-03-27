@@ -61,22 +61,22 @@ h1{
 }
 
 .kleineKnop {
-    background-color: #F27B35;
+    background-color: white;
     color: #401A04;
     text-decoration: none;
     text-align: center;
     box-shadow: 1px 1px 1px darkgrey;
+    margin-top: 10px;
 }
 
 .kleineKnop:hover {
     background-color: #401A04;
-    color: #F2E8DC;
+    color: white;
 }
 
 .filterButton {
     width: 2em;
     padding: 0.2em;
-    margin: 0 2px 10px;
 }
 
 .verticalmargin{

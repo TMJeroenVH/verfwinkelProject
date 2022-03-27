@@ -11,16 +11,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Collection;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 public class VerfpotController {
+    private Logger logger = LoggerFactory.getLogger(VerfpotController.class);
     @Autowired
     private VerfpotRepository verfpotRepository;
+
     @GetMapping({"/verfdetail", "/verfdetail/{id}"})
     public String verfDetail(Model model, @PathVariable(required = false) Integer id) {
-        if (id==null) return "verfdetail";
+        if (id == null) return "verfdetail";
         Optional<Verfpot> optionalVerfpot = verfpotRepository.findById(id);
         if (optionalVerfpot.isPresent()) {
             model.addAttribute("verfpot", optionalVerfpot.get());
@@ -36,25 +37,43 @@ public class VerfpotController {
         return "verfpotten";
     }
 
-    @GetMapping({"/verfpotten/filter"})
-    public String verfpottenMetFilter(Model model, @RequestParam(required = false) Double minimumPrijs,
-                                      @RequestParam(required = false) Double maximumPrijs) {
-        Iterable<Verfpot> alleVerf = null;
+    @GetMapping("/verfpotten/filter")
+    public String verfpottenMetFilter(Model model,
+                                      @RequestParam(required = false) Double minimumPrijs,
+                                      @RequestParam(required = false) Double maximumPrijs,
+                                      @RequestParam(required = false) String keyword) {
+        logger.info("verfpottenMetFilter -- keyword=" + keyword);
+        logger.info("verfpottenMetFilter -- minprijs=" + minimumPrijs);
+        logger.info("verfpottenMetFilter -- maxprijs=" + maximumPrijs);
+
+        Set<Verfpot> gefilterdeVerfpotten = new HashSet<Verfpot>();
+        Iterable<Verfpot> verfPrijs = null;
         if (minimumPrijs != null && maximumPrijs != null) {
-            alleVerf = verfpotRepository.findByPrijsIsBetween(minimumPrijs, maximumPrijs);
+            verfPrijs = verfpotRepository.findByPrijsIsBetween(minimumPrijs, maximumPrijs);
         } else if (minimumPrijs != null) {
-            alleVerf = verfpotRepository.findByPrijsGreaterThanEqual(minimumPrijs);
+            verfPrijs = verfpotRepository.findByPrijsGreaterThanEqual(minimumPrijs);
         } else if (maximumPrijs != null) {
-            alleVerf = verfpotRepository.findByPrijsLessThanEqual(maximumPrijs);
+            verfPrijs = verfpotRepository.findByPrijsLessThanEqual(maximumPrijs);
         } else {
-            alleVerf = verfpotRepository.findAll();
+            verfPrijs = verfpotRepository.findAll();
         }
-        model.addAttribute("verfpotten", alleVerf);
-        int aantalPotten = ((Collection<Verfpot>) alleVerf).size();
-        model.addAttribute("aantalPotten", aantalPotten);
-        model.addAttribute("showFilter", true);
+        Iterable<Verfpot> verfNaam = verfpotRepository.findByKeyword(keyword);
+
+        for (Verfpot verfpotPrijs : verfPrijs) {
+            for (Verfpot verfpotNaam : verfNaam) {
+                if (verfpotNaam.equals(verfpotPrijs)) {
+                    gefilterdeVerfpotten.add(verfpotNaam);
+                }
+            }
+        }
         model.addAttribute("minPrijs", minimumPrijs);
         model.addAttribute("maxPrijs", maximumPrijs);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("verfpotten", gefilterdeVerfpotten);
+        model.addAttribute("aantalPotten", ((Collection<?>) gefilterdeVerfpotten).size());
+        model.addAttribute("showFilter", true);
         return "verfpotten";
     }
+
+
 }

@@ -21,14 +21,19 @@
             <div class="onefilter">
                 <input type="submit" value="search" class="kleineKnop">
             </div>
-            <h3>Prijs</h3>
+            <h3>Prijs: </h3>
             <div class="onefilter">
-                <label for="minPrijs" class="filtername">min</label>
-                <input type="number" id="minPrijs" name="minimumPrijs" th:value="${minPrijs}" step="any"> <span>euro</span>
+                <label for="minPrijs" class="filtername">Min</label>
+                <input type="number" id="minPrijs" name="minimumPrijs" th:value="${minPrijs}" step="any"> <span>euro.</span>
             </div>
             <div class="onefilter">
-                <label for="maxPrijs" class="filtername">max</label>
-                <input type="number" id="maxPrijs" name="maximumPrijs" th:value="${maxPrijs}" step="any"> <span>euro</span>
+                <label for="maxPrijs" class="filtername">Max</label>
+                <input type="number" id="maxPrijs" name="maximumPrijs" th:value="${maxPrijs}" step="any"> <span>euro.</span>
+            </div>
+            <h3>Naam: </h3>
+            <div class="onefilter">
+                <label for="keyword" class="filtername">Keyword</label>
+                <input type="text" id="keyword" name="keyword" th:value="${keyword}">
             </div>
         </form>
     </div>
