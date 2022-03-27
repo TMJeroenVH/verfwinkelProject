@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="homeBody">
 <div th:replace="fragments/header :: header">Hier komt de header</div>
-<h1>Homepagina</h1>
+<div>
+    <img th:src="@{/img/verfachtergrond.jpg}" src="../static/img/verfachtergrond.jpg" alt="Verf" height=100% width=100%/>
+</div>
 </body>
 </html>
