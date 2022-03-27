@@ -2,14 +2,16 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Verfpot</title>
+    <title>Bestelpagina</title>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/verfwinkel.css}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <div th:replace="fragments/header :: header">Hier komt de header</div>
+<h1>Bestelling plaatsen! (Pagina is nog niet af)</h1>
 <div class="row1">
     <div class="row1content" th:if="${verfpot}">
         <div>
@@ -27,8 +29,6 @@
             <div class="info">Prijs (1L):</div>
             <div><p th:text="${'€'} + ${verfpot.getPrijs()}">Prijs verfpot</p></div><br>
         </div>
-        <a class="mediumKnop" th:href="@{|/verfdetail/bestelpagina/${verfpot.id}}">Bestel nu!</a>
-
     </div>
     <div class="row1content" th:unless="${verfpot}">
         <p>Er is geen verfpot gekozen</p>

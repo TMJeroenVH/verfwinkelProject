@@ -33,7 +33,7 @@ h1{
 .linkNav {
     text-decoration: none;
     color: #401A04;
-    margin-right: 20px;
+    margin-right: 35px;
 }
 
 .eersteLinkNav {
@@ -43,14 +43,6 @@ h1{
 }
 
 /*KNOPPEN VERFPOTTEN LIJST*/
-
-.euroteken {
-    display: inline-block;
-}
-
-.euroteken + p {
-    display: inline-block;
-}
 
 .verfpottenKnop {
     background-color: #F2D680;
@@ -117,5 +109,25 @@ div.info {
 
 div.info + div {
     display: inline-block;
+}
+
+.detailTabel{
+    margin-bottom: 20px;
+}
+
+.mediumKnop{
+    background-color: white;
+    color: #401A04;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 1px 1px 1px darkgrey;
+    padding: 0.5em;
+    margin-left: 17px;
+
+}
+
+.mediumKnop:hover {
+    background-color: #401A04;
+    color: white;
 }
 
