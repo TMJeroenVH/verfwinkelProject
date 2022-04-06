@@ -41,17 +41,20 @@ public class VerfpotController {
     public String verfpottenMetFilter(Model model,
                                       @RequestParam(required = false) Double minimumPrijs,
                                       @RequestParam(required = false) Double maximumPrijs,
-                                      @RequestParam(required = false) String keyword) {
+                                      @RequestParam(required = false) String keyword,
+                                      @RequestParam(required = false) String ondergrond) {
         logger.info("verfpottenMetFilter -- keyword=" + keyword);
         logger.info("verfpottenMetFilter -- minprijs=" + minimumPrijs);
         logger.info("verfpottenMetFilter -- maxprijs=" + maximumPrijs);
+        logger.info("verfpottenMetFilter -- ondergrond=" + ondergrond);
 
-        List<Verfpot> verfPotten = verfpotRepository.findByPrijsAndNaam(
-                minimumPrijs, maximumPrijs, keyword);
+        List<Verfpot> verfPotten = verfpotRepository.findByPrijsNaam(
+                minimumPrijs, maximumPrijs, keyword, ondergrond);
 
         model.addAttribute("minPrijs", minimumPrijs);
         model.addAttribute("maxPrijs", maximumPrijs);
         model.addAttribute("keyword", keyword);
+        model.addAttribute("ondergrond", ondergrond);
         model.addAttribute("verfpotten", verfPotten);
         model.addAttribute("aantalPotten", ((Collection<?>) verfPotten).size());
         model.addAttribute("showFilter", true);

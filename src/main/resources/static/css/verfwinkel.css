@@ -131,3 +131,12 @@ div.info + div {
     color: white;
 }
 
+/*BestelPagina*/
+
+.bestelInput{
+    width: 50%;
+}
+
+.bestelling{
+    text-align: center;
+}

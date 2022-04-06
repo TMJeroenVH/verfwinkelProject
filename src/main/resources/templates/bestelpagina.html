@@ -11,7 +11,7 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header">Hier komt de header</div>
-<h1>Bestelling plaatsen! (Pagina is nog niet af)</h1>
+<h1>Bestelling plaatsen!</h1>
 <div class="row1">
     <div class="row1content" th:if="${verfpot}">
         <div>
@@ -29,6 +29,17 @@
             <div class="info">Prijs (1L):</div>
             <div><p th:text="${'€'} + ${verfpot.getPrijs()}">Prijs verfpot</p></div><br>
         </div>
+        <form>
+            <label for="ondergrond">Ondergrond:</label><br>
+            <input class="bestelInput" type="text" id="ondergrond" name="ondergrond"><br>
+            <label for="kleur">Kleur:</label><br>
+            <input class="bestelInput" type="text" id="kleur" name="kleur"><br>
+            <label for="verpakking">Verpakking:</label><br>
+            <input class="bestelInput" type="text" id="verpakking" name="verpakking"><br>
+            <label for="extraInfo">Extra Info:</label><br>
+            <textarea class="bestelInput" id="extraInfo" name="extraInfo" rows="15"></textarea>
+            <a class="mediumKnop" th:href="@{/bevestigingspagina}">Bestel nu!</a>
+        </form>
     </div>
     <div class="row1content" th:unless="${verfpot}">
         <p>Er is geen verfpot gekozen</p>

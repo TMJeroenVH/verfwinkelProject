@@ -27,7 +27,7 @@
             <div class="info">Prijs (1L):</div>
             <div><p th:text="${'€'} + ${verfpot.getPrijs()}">Prijs verfpot</p></div><br>
         </div>
-        <a class="mediumKnop" th:href="@{|/verfdetail/bestelpagina/${verfpot.id}}">Bestel nu!</a>
+        <a class="mediumKnop" th:href="@{|/verfdetail/bestelpagina/${verfpot.id}}">Naar bestelpagina!</a>
 
     </div>
     <div class="row1content" th:unless="${verfpot}">

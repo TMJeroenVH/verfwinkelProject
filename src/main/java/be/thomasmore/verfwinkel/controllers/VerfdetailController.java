@@ -16,12 +16,19 @@ public class VerfdetailController {
     private VerfpotRepository verfpotRepository;
 
     @GetMapping({"/verfdetail/bestelpagina/{id}"})
-    public String bestelVerf(Model model, @PathVariable(required = false) Integer id){
+    public String bestelPagina(Model model, @PathVariable(required = false) Integer id) {
         Optional<Verfpot> optionalVerfpot = verfpotRepository.findById(id);
-        if (optionalVerfpot.isPresent()){
+        if (optionalVerfpot.isPresent()) {
             model.addAttribute("verfpot", optionalVerfpot.get());
         }
 
         return "bestelpagina";
+    }
+
+    @GetMapping({"/bevestigingspagina"})
+    public String bestelVerf(Model model) {
+
+
+        return "bevestigingspagina";
     }
 }
