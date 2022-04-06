@@ -46,31 +46,14 @@ public class VerfpotController {
         logger.info("verfpottenMetFilter -- minprijs=" + minimumPrijs);
         logger.info("verfpottenMetFilter -- maxprijs=" + maximumPrijs);
 
-        Set<Verfpot> gefilterdeVerfpotten = new HashSet<Verfpot>();
-        Iterable<Verfpot> verfPrijs = null;
-        if (minimumPrijs != null && maximumPrijs != null) {
-            verfPrijs = verfpotRepository.findByPrijsIsBetween(minimumPrijs, maximumPrijs);
-        } else if (minimumPrijs != null) {
-            verfPrijs = verfpotRepository.findByPrijsGreaterThanEqual(minimumPrijs);
-        } else if (maximumPrijs != null) {
-            verfPrijs = verfpotRepository.findByPrijsLessThanEqual(maximumPrijs);
-        } else {
-            verfPrijs = verfpotRepository.findAll();
-        }
-        Iterable<Verfpot> verfNaam = verfpotRepository.findByKeyword(keyword);
+        List<Verfpot> verfPotten = verfpotRepository.findByPrijsAndNaam(
+                minimumPrijs, maximumPrijs, keyword);
 
-        for (Verfpot verfpotPrijs : verfPrijs) {
-            for (Verfpot verfpotNaam : verfNaam) {
-                if (verfpotNaam.equals(verfpotPrijs)) {
-                    gefilterdeVerfpotten.add(verfpotNaam);
-                }
-            }
-        }
         model.addAttribute("minPrijs", minimumPrijs);
         model.addAttribute("maxPrijs", maximumPrijs);
         model.addAttribute("keyword", keyword);
-        model.addAttribute("verfpotten", gefilterdeVerfpotten);
-        model.addAttribute("aantalPotten", ((Collection<?>) gefilterdeVerfpotten).size());
+        model.addAttribute("verfpotten", verfPotten);
+        model.addAttribute("aantalPotten", ((Collection<?>) verfPotten).size());
         model.addAttribute("showFilter", true);
         return "verfpotten";
     }
