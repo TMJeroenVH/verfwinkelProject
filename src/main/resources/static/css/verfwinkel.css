@@ -51,7 +51,7 @@ h1{
     text-align: center;
     box-shadow: 1px 1px 1px darkgrey;
     display: block;
-    margin: 10px 40px;
+    margin: 10px;
     width: 400px;
     font-size: 1.2em;
     padding: 1em;
@@ -89,6 +89,20 @@ h1{
 .verticalmargin{
     margin-bottom: 20px;
     margin-left: 40px;
+}
+
+.bodyVerfpotten{
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+
+.filters{
+    width: 500px;
+    float:left; /* add this */
+}
+
+.verfpottenLijst{
+    overflow: hidden;
+    margin-left: 720px;
 }
 
 /*DETAILPAGINA*/
