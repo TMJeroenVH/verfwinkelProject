@@ -1,18 +1,15 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Homepagina</title>
+    <title>Admin</title>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/verfwinkel.css}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 </head>
-<body class="homeBody">
+<body>
 <div th:replace="fragments/header :: header">Hier komt de header</div>
-<div>
-    <img th:src="@{/img/verfachtergrond.jpg}" src="../static/img/verfachtergrond.jpg" alt="Verf" height=100% width=100%/>
-</div>
+<h1>Dit is een admin pagina</h1>
 </body>
 </html>

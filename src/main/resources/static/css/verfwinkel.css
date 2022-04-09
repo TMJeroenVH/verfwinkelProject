@@ -5,41 +5,58 @@ html {
     max-width: 100%;
     overflow-x: hidden;
 }
-body{
+
+body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
     margin-left: 0;
 }
-.homeBody{
+
+.homeBody {
     overflow: hidden;
     position: fixed;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
 
-
 /*NAV*/
 
-.navigatieBar {
-    width: 100%;
+/* Add a black background color to the top navigation */
+.topnav {
+    position: relative;
     border-bottom: #401A04 solid 2px;
+    overflow: hidden;
     font-size: 2rem;
 }
 
-.linkNav {
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
     color: #401A04;
-    margin-right: 35px;
+
+
 }
 
-.eersteLinkNav {
-    margin-right: 625px;
-    font-weight: bolder;
-    margin-left: 10px;
+
+/* Centered section inside the top navigation */
+.topnav-centered {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+    float: right;
 }
 
 /*KNOPPEN VERFPOTTEN LIJST*/
@@ -86,21 +103,21 @@ h1{
     padding: 0.2em;
 }
 
-.verticalmargin{
+.verticalmargin {
     margin-bottom: 20px;
     margin-left: 40px;
 }
 
-.bodyVerfpotten{
+.bodyVerfpotten {
     overflow: hidden; /* will contain if #first is longer than #second */
 }
 
-.filters{
+.filters {
     width: 500px;
-    float:left; /* add this */
+    float: left; /* add this */
 }
 
-.verfpottenLijst{
+.verfpottenLijst {
     overflow: hidden;
     margin-left: 720px;
 }
@@ -125,11 +142,11 @@ div.info + div {
     display: inline-block;
 }
 
-.detailTabel{
+.detailTabel {
     margin-bottom: 20px;
 }
 
-.mediumKnop{
+.mediumKnop {
     background-color: white;
     color: #401A04;
     text-decoration: none;
@@ -147,10 +164,10 @@ div.info + div {
 
 /*BestelPagina*/
 
-.bestelInput{
+.bestelInput {
     width: 50%;
 }
 
-.bestelling{
+.bestelling {
     text-align: center;
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
 import java.util.*;
 
 @Controller
@@ -20,25 +21,31 @@ public class VerfpotController {
     private VerfpotRepository verfpotRepository;
 
     @GetMapping({"/verfdetail", "/verfdetail/{id}"})
-    public String verfDetail(Model model, @PathVariable(required = false) Integer id) {
+    public String verfDetail(Model model, Principal principal, @PathVariable(required = false) Integer id) {
         if (id == null) return "verfdetail";
         Optional<Verfpot> optionalVerfpot = verfpotRepository.findById(id);
         if (optionalVerfpot.isPresent()) {
             model.addAttribute("verfpot", optionalVerfpot.get());
         }
+        final String loginName = principal==null ? "NOBODY" : principal.getName();
+        logger.info("verfdetail - logged in as " + loginName);
+        model.addAttribute("principal", principal);
         return "verfdetail";
     }
 
     @GetMapping({"/verfpotten", "/verfpotten/{something}"})
-    public String verfpotten(Model model) {
+    public String verfpotten(Model model, Principal principal) {
         Iterable<Verfpot> alleVerfPotten = verfpotRepository.findAll();
         model.addAttribute("aantalPotten", verfpotRepository.count());
         model.addAttribute("verfpotten", alleVerfPotten);
+        final String loginName = principal==null ? "NOBODY" : principal.getName();
+        logger.info("verfpotten - logged in as " + loginName);
+        model.addAttribute("principal", principal);
         return "verfpotten";
     }
 
     @GetMapping("/verfpotten/filter")
-    public String verfpottenMetFilter(Model model,
+    public String verfpottenMetFilter(Model model, Principal principal,
                                       @RequestParam(required = false) Double minimumPrijs,
                                       @RequestParam(required = false) Double maximumPrijs,
                                       @RequestParam(required = false) String keyword,
@@ -58,6 +65,10 @@ public class VerfpotController {
         model.addAttribute("verfpotten", verfPotten);
         model.addAttribute("aantalPotten", ((Collection<?>) verfPotten).size());
         model.addAttribute("showFilter", true);
+
+        final String loginName = principal==null ? "NOBODY" : principal.getName();
+        logger.info("verfpotten - logged in as " + loginName);
+        model.addAttribute("principal", principal);
         return "verfpotten";
     }
 
