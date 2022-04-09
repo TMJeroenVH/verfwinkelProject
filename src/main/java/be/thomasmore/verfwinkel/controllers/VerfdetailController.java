@@ -7,13 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @Controller
 public class VerfdetailController {
     @Autowired
     private VerfpotRepository verfpotRepository;
+    private Logger logger;
 
     @GetMapping({"/verfdetail/bestelpagina/{id}"})
     public String bestelPagina(Model model, @PathVariable(required = false) Integer id) {
