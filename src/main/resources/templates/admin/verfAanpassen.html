@@ -1,0 +1,39 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>VerfAanpassen</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/verfwinkel.css}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments/header :: header">Hier komt de header</div>
+<h1>Dit is een admin pagina voor verf aan te passen.</h1>
+<div th:if="${verfpot}">
+    <form th:action="@{|/admin/verfAanpassen/${verfpot.id}|}" th:object="${verfpot}" method="post">
+        <div class="editButtonDiv">
+            <input type="submit" value="Save" class="mediumKnop">
+        </div>
+        <div class="aanpasTabel">
+            <label for="naam" class="eerst">Naam: </label>
+            <div class="tweede"><input type="text" id="naam" class="editfield" th:field="*{naam}"></div>
+
+            <label for="ondergrond" class="eerst">Ondergrond: </label>
+            <div class="tweede"><input type="text" id="ondergrond" class="editfield" th:field="*{ondergrond}"></div>
+
+            <label for="kleurAanbod" class="eerst">Kleur: </label>
+            <div class="tweede"><input type="text" id="kleurAanbod" class="editfield" th:field="*{kleurAanbod}"></div>
+
+            <label for="verpakkingMogelijkheden" class="eerst">Verpakking: </label>
+            <div class="tweede"><input type="text" id="verpakkingMogelijkheden" class="editfield" th:field="*{verpakkingMogelijkheden}">
+            </div>
+
+            <label for="prijs" class="eerst">Prijs (1L): </label>
+            <div class="tweede"><input type="text" id="prijs" class="editfield" th:field="*{prijs}"></div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -162,6 +162,12 @@ div.info + div {
     color: white;
 }
 
+.editButtonDiv{
+    position: fixed;
+    right: 50px;
+    top: 160px;
+}
+
 /*BestelPagina*/
 
 .bestelInput {
@@ -170,4 +176,21 @@ div.info + div {
 
 .bestelling {
     text-align: center;
+}
+
+/*VerfAanpassen*/
+
+.aanpasTabel{
+    width: 500px;
+    overflow: hidden; /* will contain if #first is longer than #second */
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.eerst {
+    width: 300px;
+    float:left; /* add this */
+}
+.tweede {
+    overflow: hidden; /* if you don't want #second to wrap below #first */
 }
