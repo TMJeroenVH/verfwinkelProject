@@ -27,7 +27,10 @@ public class AdminController {
     }
 
     @GetMapping("/verfAanpassen/{id}")
-    public String verfAanpassen(Model model, @PathVariable int id) {
+    public String verfAanpassen(Model model, Principal principal, @PathVariable int id) {
+        final String loginName = principal==null ? "NOBODY" : principal.getName();
+        logger.info("verfAanpassen - logged in as " + loginName);
+        model.addAttribute("principal", principal);
         logger.info("verfAanpassen"+id);
         Optional<Verfpot> optionalVerfpot = verfpotRepository.findById(id);
         if (optionalVerfpot.isPresent()) {
@@ -59,7 +62,10 @@ public class AdminController {
     }
 
     @GetMapping("/verfToevoegen")
-    public String verfToevoegen(Model model) {
+    public String verfToevoegen(Model model, Principal principal) {
+        final String loginName = principal==null ? "NOBODY" : principal.getName();
+        logger.info("verftoevoegen - logged in as " + loginName);
+        model.addAttribute("principal", principal);
         logger.info("verfToevoegen");
         model.addAttribute("verpotten", verfpotRepository.findAll());
         return "admin/verfToevoegen";

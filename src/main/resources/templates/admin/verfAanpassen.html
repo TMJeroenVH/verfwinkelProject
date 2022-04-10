@@ -1,6 +1,6 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"><head>
     <meta charset="UTF-8">
     <title>VerfAanpassen</title>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/verfwinkel.css}"/>
@@ -13,10 +13,10 @@
 <h1>Dit is een admin pagina voor verf aan te passen.</h1>
 <div th:if="${verfpot}">
     <form th:action="@{|/admin/verfAanpassen/${verfpot.id}|}" th:object="${verfpot}" method="post">
-        <div class="saveButton">
+        <div class="saveButton" sec:authorize="hasAuthority('ROLE_ADMIN')">
             <input type="submit" value="Save" class="mediumKnop">
         </div>
-        <div th:if="${verfpot}" class="backButton">
+        <div th:if="${verfpot}" class="backButton" sec:authorize="hasAuthority('ROLE_ADMIN')">
             <a class="mediumKnop" th:href="@{'/verfdetail/' + ${verfpot.id}}">Terug</a>
         </div>
         <div class="aanpasTabel">
