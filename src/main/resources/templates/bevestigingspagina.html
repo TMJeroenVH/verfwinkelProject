@@ -1,5 +1,6 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Bevestingspagina</title>
@@ -12,5 +13,6 @@
 <div th:replace="fragments/header :: header">Hier komt de header</div>
 <h1>Bedankt!</h1>
 <h2 class="bestelling">Uw bestelling is succesvol geplaatst! </h2>
+<h3 class="bestelling">We nemen zo snel mogelijk contact met u op via mail!</h3>
 </body>
 </html>

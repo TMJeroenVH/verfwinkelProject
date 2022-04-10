@@ -11,6 +11,7 @@ public class Klant {
     private Integer id;
     private String naam;
     private String adres;
+    private String mail;
     @OneToOne(fetch = FetchType.LAZY)
     private User user;
 
@@ -18,9 +19,10 @@ public class Klant {
 
     }
 
-    public Klant(String naam, String adres, User user) {
+    public Klant(String naam, String adres, User user, String mail) {
         this.naam = naam;
         this.adres = adres;
+        this.mail = mail;
         this.user = user;
     }
 
@@ -46,6 +48,14 @@ public class Klant {
 
     public void setAdres(String adres) {
         adres = adres;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     public User getUser() {

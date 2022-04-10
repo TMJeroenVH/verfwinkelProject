@@ -37,8 +37,8 @@
             <label for="verpakking">Verpakking:</label><br>
             <input class="bestelInput" type="text" id="verpakking" name="verpakking"><br>
             <label for="extraInfo">Extra Info:</label><br>
-            <textarea class="bestelInput" id="extraInfo" name="extraInfo" rows="15"></textarea>
-            <a class="mediumKnop" th:href="@{/bevestigingspagina}">Bestel nu!</a>
+            <textarea class="bestelInput" id="extraInfo" name="extraInfo" rows="5"></textarea>
+            <a class="mediumKnop newButton" th:href="@{/bevestigingspagina}">Bestel nu!</a>
         </form>
     </div>
     <div class="row1content" th:unless="${verfpot}">

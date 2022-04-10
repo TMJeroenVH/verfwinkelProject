@@ -52,51 +52,51 @@ INSERT INTO USER
 VALUES
 (nextval('USER_SEQ'), 'giraf', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
 INSERT INTO KLANT
-(ID, naam, adres, user_id)
+(ID, naam, adres, mail , user_id)
 VALUES
-(nextval('KLANT_SEQ'), 'Gillende Giraf', 'Antwerpen', 3);
+(nextval('KLANT_SEQ'), 'Gillende Giraf', 'Antwerpen', 'giraf@hotmail.com', 3);
 
 INSERT INTO USER
 (ID, username, password, role)
 VALUES
 (nextval('USER_SEQ'), 'olifant', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
 INSERT INTO KLANT
-(ID, naam, adres, user_id)
+(ID, naam, adres, mail , user_id)
 VALUES
-(nextval('KLANT_SEQ'), 'Olijke Olifant', 'Mechelen',  4);
+(nextval('KLANT_SEQ'), 'Olijke Olifant', 'Mechelen', 'olifant@hotmail.com', 4);
 
 INSERT INTO USER
 (ID, username, password, role)
 VALUES
 (nextval('USER_SEQ'), 'dromedaris', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
 INSERT INTO KLANT
-(ID, naam, adres, user_id)
+(ID, naam, adres, mail , user_id)
 VALUES
-(nextval('KLANT_SEQ'), 'Dorstige Dromedaris', 'Mortsel', 5);
+(nextval('KLANT_SEQ'), 'Dorstige Dromedaris', 'Mortsel','dromedaris@hotmail.com', 5);
 
 INSERT INTO USER
 (ID, username, password, role)
 VALUES
 (nextval('USER_SEQ'), 'draak', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
 INSERT INTO KLANT
-(ID, naam, adres, user_id)
+(ID, naam, adres, mail , user_id)
 VALUES
-(nextval('KLANT_SEQ'), 'Dansende Draak', 'Lier', 6);
+(nextval('KLANT_SEQ'), 'Dansende Draak', 'Lier','draak@hotmail.com', 6);
 
 INSERT INTO USER
 (ID, username, password, role)
 VALUES
 (nextval('USER_SEQ'), 'das', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
 INSERT INTO KLANT
-(ID, naam, adres, user_id)
+(ID, naam, adres, mail , user_id)
 VALUES
-(nextval('KLANT_SEQ'), 'Drinkende Das', 'Antwerpen', 7);
+(nextval('KLANT_SEQ'), 'Drinkende Das', 'Antwerpen','das@hotmail.com', 7);
 
 INSERT INTO USER
 (ID, username, password, role)
 VALUES
 (nextval('USER_SEQ'), 'kikker', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
 INSERT INTO KLANT
-(ID, naam, adres, user_id)
+(ID, naam, adres, mail , user_id)
 VALUES
-(nextval('KLANT_SEQ'), 'Klokkende Kikker', 'Berchem', 8);
+(nextval('KLANT_SEQ'), 'Klokkende Kikker', 'Berchem', 'kikker@hotmail.com',8);

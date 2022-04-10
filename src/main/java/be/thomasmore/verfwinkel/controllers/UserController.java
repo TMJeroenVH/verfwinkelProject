@@ -60,17 +60,19 @@ public class UserController {
                                @RequestParam String username,
                                @RequestParam String password,
                                @RequestParam String name,
+                               @RequestParam String mail,
                                @RequestParam String city) {
         if (principal != null) return "redirect:/verfpotten";
         if (username==null || username.trim().equals("")) return "redirect:/verfpotten";
         if (password==null || password.trim().equals("")) return "redirect:/verfpotten";
+        if (mail==null || mail.trim().equals("")) return "redirect:/verfpotten";
         username = username.trim();
         Optional<User> optionalUser = userRepository.findByUsername(username);
         if (optionalUser.isPresent()) return "redirect:/verfpotten";
         String encodedPassword = encoder.encode(password.trim());
         User user = new User(username, encodedPassword, "ROLE_USER");
         userRepository.save(user);
-        Klant klant = new Klant(name.trim(), city.trim(), user);
+        Klant klant = new Klant(name.trim(), city.trim(), user, mail.trim());
         klantenRepository.save(klant);
         autologin(username, password.trim());
         return "redirect:/verfpotten";
