@@ -193,6 +193,13 @@ div.info + div {
     overflow: hidden; /* if you don't want #second to wrap below #first */
 }
 
+/*About*/
+.aboutMe{
+    margin-top: 150px;
+    width: 100%;
+    text-align: center;
+}
+
 
 /*Buttons*/
 
@@ -212,6 +219,7 @@ div.info + div {
     position: fixed;
     right: 50px;
     top: 173px;
+    text-decoration: none;
 }
 
 .inloggen, .registreren{

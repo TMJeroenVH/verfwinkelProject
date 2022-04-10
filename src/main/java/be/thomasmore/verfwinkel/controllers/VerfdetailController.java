@@ -35,6 +35,7 @@ public class VerfdetailController {
 
     @GetMapping({"/bevestigingspagina"})
     public String bestelVerf(Model model, Principal principal) {
+        if (principal == null) return "redirect:/user/login";
         final String loginName = principal==null ? "NOBODY" : principal.getName();
         logger.info("bevestiging - logged in as " + loginName);
         model.addAttribute("principal", principal);
