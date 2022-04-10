@@ -46,3 +46,57 @@ VALUES (nextval('USER_SEQ'), 'admin', '$2a$10$183YgFb7h2Meicizr0S6bO.v5wUky9lELv
 
 INSERT INTO USER (ID, username, password, role)
 VALUES (nextval('USER_SEQ'), 'daria', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
+
+INSERT INTO USER
+(ID, username, password, role)
+VALUES
+(nextval('USER_SEQ'), 'giraf', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
+INSERT INTO KLANT
+(ID, naam, adres, user_id)
+VALUES
+(nextval('KLANT_SEQ'), 'Gillende Giraf', 'Antwerpen', 3);
+
+INSERT INTO USER
+(ID, username, password, role)
+VALUES
+(nextval('USER_SEQ'), 'olifant', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
+INSERT INTO KLANT
+(ID, naam, adres, user_id)
+VALUES
+(nextval('KLANT_SEQ'), 'Olijke Olifant', 'Mechelen',  4);
+
+INSERT INTO USER
+(ID, username, password, role)
+VALUES
+(nextval('USER_SEQ'), 'dromedaris', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
+INSERT INTO KLANT
+(ID, naam, adres, user_id)
+VALUES
+(nextval('KLANT_SEQ'), 'Dorstige Dromedaris', 'Mortsel', 5);
+
+INSERT INTO USER
+(ID, username, password, role)
+VALUES
+(nextval('USER_SEQ'), 'draak', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
+INSERT INTO KLANT
+(ID, naam, adres, user_id)
+VALUES
+(nextval('KLANT_SEQ'), 'Dansende Draak', 'Lier', 6);
+
+INSERT INTO USER
+(ID, username, password, role)
+VALUES
+(nextval('USER_SEQ'), 'das', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
+INSERT INTO KLANT
+(ID, naam, adres, user_id)
+VALUES
+(nextval('KLANT_SEQ'), 'Drinkende Das', 'Antwerpen', 7);
+
+INSERT INTO USER
+(ID, username, password, role)
+VALUES
+(nextval('USER_SEQ'), 'kikker', '$2a$10$qkYEzClRvGL03mzmKI1Tw.WGRKzm19S5aqQUeFb7x5/pGw/bhq96K', 'ROLE_USER');
+INSERT INTO KLANT
+(ID, naam, adres, user_id)
+VALUES
+(nextval('KLANT_SEQ'), 'Klokkende Kikker', 'Berchem', 8);
