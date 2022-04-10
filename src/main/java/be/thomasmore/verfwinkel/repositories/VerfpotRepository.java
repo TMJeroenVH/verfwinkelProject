@@ -6,6 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface VerfpotRepository extends CrudRepository<Verfpot, Integer> {
     Iterable<Verfpot> findByPrijsLessThanEqual(Double prijs);
@@ -20,4 +21,9 @@ public interface VerfpotRepository extends CrudRepository<Verfpot, Integer> {
                                   @Param("max") Double max,
                                   @Param("word") String word,
                                   @Param("ondergrond") String ondergrond);
+
+    Optional<Verfpot> findFirstByIdLessThanOrderByIdDesc(int id);
+    Optional<Verfpot> findFirstByIdGreaterThanOrderById(int id);
+    Optional<Verfpot> findFirstByOrderByIdDesc();
+    Optional<Verfpot> findFirstByOrderByIdAsc();
 }

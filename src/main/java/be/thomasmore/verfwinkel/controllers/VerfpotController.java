@@ -24,9 +24,23 @@ public class VerfpotController {
     public String verfDetail(Model model, Principal principal, @PathVariable(required = false) Integer id) {
         if (id == null) return "verfdetail";
         Optional<Verfpot> optionalVerfpot = verfpotRepository.findById(id);
+        Optional<Verfpot> optionalPrev = verfpotRepository.findFirstByIdLessThanOrderByIdDesc(id);
+        Optional<Verfpot> optionalNext = verfpotRepository.findFirstByIdGreaterThanOrderById(id);
         if (optionalVerfpot.isPresent()) {
-            model.addAttribute("verfpot", optionalVerfpot.get());
+            Verfpot v = optionalVerfpot.get();
+            model.addAttribute("verfpot", v);
         }
+        if (optionalPrev.isPresent()) {
+            model.addAttribute("prev", optionalPrev.get().getId());
+        } else {
+            model.addAttribute("prev", verfpotRepository.findFirstByOrderByIdDesc().get().getId());
+        }
+        if (optionalNext.isPresent()) {
+            model.addAttribute("next", optionalNext.get().getId());
+        } else {
+            model.addAttribute("next", verfpotRepository.findFirstByOrderByIdAsc().get().getId());
+        }
+
         final String loginName = principal==null ? "NOBODY" : principal.getName();
         logger.info("verfdetail - logged in as " + loginName);
         model.addAttribute("principal", principal);

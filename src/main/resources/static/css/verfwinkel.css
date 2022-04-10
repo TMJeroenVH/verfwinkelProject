@@ -163,6 +163,17 @@ div.info + div {
     color: white;
 }
 
+.prevButton {
+    position: fixed;
+    top: 100px;
+    left: 50px;
+}
+
+.nextButton {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+}
 
 
 /*BestelPagina*/
@@ -194,7 +205,7 @@ div.info + div {
 }
 
 /*About*/
-.aboutMe{
+.aboutMe {
     margin-top: 150px;
     width: 100%;
     text-align: center;
@@ -215,25 +226,25 @@ div.info + div {
     top: 180px;
 }
 
-.saveButton{
+.saveButton {
     position: fixed;
     right: 50px;
     top: 173px;
     text-decoration: none;
 }
 
-.inloggen, .registreren{
+.inloggen, .registreren {
     margin-left: 50px;
     margin-top: 50px;
 }
 
-.annuleerButton{
+.annuleerButton {
     position: fixed;
     right: 130px;
     top: 130px;
 }
 
-.inloggenButton{
+.inloggenButton {
     position: fixed;
     right: 50px;
     top: 123px;
