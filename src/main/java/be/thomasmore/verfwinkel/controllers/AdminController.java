@@ -57,4 +57,28 @@ public class AdminController {
         }
         return "redirect:/verfdetail/"+id;
     }
+
+    @GetMapping("/verfToevoegen")
+    public String verfToevoegen(Model model) {
+        logger.info("verfToevoegen");
+        model.addAttribute("verpotten", verfpotRepository.findAll());
+        return "admin/verfToevoegen";
+    }
+
+    @ModelAttribute("verfpot")
+    public Verfpot findVerfpot(@PathVariable(required = false) Integer id) {
+        logger.info("findVerfpot "+id);
+        if (id!=null) {
+            Optional<Verfpot> optionalVerfpot = verfpotRepository.findById(id);
+            if (optionalVerfpot.isPresent()) return optionalVerfpot.get();
+        }
+        return new Verfpot();
+    }
+
+    @PostMapping("/verfToevoegen")
+    public String verfToevoegenPost(Model model, @ModelAttribute("verfpot") Verfpot verfpot) {
+        logger.info("verfToevoegenPost -- new name=" + verfpot.getNaam() + ", prijs=" + verfpot.getPrijs());
+        verfpotRepository.save(verfpot);
+        return "redirect:/verfdetail/"+verfpot.getId();
+    }
 }

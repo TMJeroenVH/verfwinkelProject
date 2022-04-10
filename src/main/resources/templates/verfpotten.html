@@ -15,6 +15,11 @@
     <span class="generalinfo" th:text="|${aantalPotten} verfpotten gevonden|">0 verfpotten gevonden</span>
 </div>
 <div class="bodyVerfpotten">
+    <form th:action="@{|/admin/verfToevoegen|}" method="get">
+        <div class="newButton">
+            <input type="submit" value="Nieuwe verf toevoegen" class="mediumKnop">
+        </div>
+    </form>
     <div class="filters" th:if="${showFilter}">
         <div class="verticalmargin">
             <a th:href="@{/verfpotten}" class="kleineKnop filterButton">Dicht</a>

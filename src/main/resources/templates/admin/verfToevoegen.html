@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>VerfAanpassen</title>
+    <title>VerfToevoegen</title>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/verfwinkel.css}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,14 +10,15 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header">Hier komt de header</div>
-<h1>Dit is een admin pagina voor verf aan te passen.</h1>
-<div th:if="${verfpot}">
-    <form th:action="@{|/admin/verfAanpassen/${verfpot.id}|}" th:object="${verfpot}" method="post">
+<h1>Dit is een admin pagina voor verf toe te voegen.</h1>
+<div th:object="${verfpot}">
+    <h2>Nieuwe verf</h2>
+    <form th:action="@{|/admin/verfToevoegen|}" method="post">
         <div class="saveButton">
-            <input type="submit" value="Save" class="mediumKnop">
+            <input type="submit" value="Opslaan" class="mediumKnop">
         </div>
         <div th:if="${verfpot}" class="backButton">
-            <a class="mediumKnop" th:href="@{'/verfdetail/' + ${verfpot.id}}">Terug</a>
+            <a class="mediumKnop" th:href="@{'/verfpotten/' + ${verfpot.id}}">Terug</a>
         </div>
         <div class="aanpasTabel">
             <label for="naam" class="eerst">Naam: </label>
