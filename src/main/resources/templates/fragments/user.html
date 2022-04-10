@@ -7,10 +7,10 @@
 </head>
 <body>
 <div class="topnav-right" th:unless="${principal}" th:fragment="loginmenu">
-    <a href="/login">Login</a>
+    <a href="/user/login">Login</a>
 </div>
 <div class="topnav-right" th:unless="!${principal}" th:fragment="logoutmenu">
-    <a href="/logout">Logout</a>
+    <a href="/user/logout">Logout</a>
 </div>
 </body>
 </html>

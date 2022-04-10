@@ -5,31 +5,28 @@ import javax.persistence.*;
 @Entity
 public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
-    @SequenceGenerator(name = "user_generator", sequenceName = "USER_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "user_generator", sequenceName = "user_seq", allocationSize = 1)
     @Id
-    private int id;
+    private Integer id;
     private String username;
     private String password;
     private String role;
-    private String adres;
 
     public User() {
-
     }
 
-    public User(int id, String username, String password, String role, String adres) {
+    public User(String username, String password, String role) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.role = role;
-        this.adres = adres;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -55,13 +52,5 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
-    }
-
-    public String getAdres() {
-        return adres;
-    }
-
-    public void setAdres(String adres) {
-        this.adres = adres;
     }
 }

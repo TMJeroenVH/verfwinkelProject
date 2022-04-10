@@ -214,6 +214,23 @@ div.info + div {
     top: 173px;
 }
 
+.inloggen{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.annuleerButton{
+    position: fixed;
+    right: 130px;
+    top: 130px;
+}
+
+.inloggenButton{
+    position: fixed;
+    right: 50px;
+    top: 123px;
+}
+
 
 
 
