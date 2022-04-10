@@ -1,13 +1,14 @@
 package be.thomasmore.verfwinkel.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
 public class Verfpot {
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "verf_generator")
+    @SequenceGenerator(name = "verf_generator", sequenceName = "verf_seq", allocationSize = 1)
     @Id
-    private int id;
+    private Integer id;
     private String naam;
     private String ondergrond;
     private String kleurAanbod;

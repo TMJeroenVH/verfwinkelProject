@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
-    @SequenceGenerator(name = "user_generator", sequenceName = "user_seq", allocationSize = 1)
+    @SequenceGenerator(name = "user_generator", sequenceName = "USER_SEQ", allocationSize = 1)
     @Id
     private int id;
     private String username;
