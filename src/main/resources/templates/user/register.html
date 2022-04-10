@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/verfwinkel.css}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments/header :: header">Hier komt de header</div>
+<h2>Registreren</h2>
+<div>
+    <form th:action="@{/user/register}" method="post">
+        <div class="inloggenButton">
+            <input type="submit" value="Go!" class="mediumKnop">
+        </div>
+        <div class="annuleerButton">
+            <a href="/verfpotten" class="mediumKnop">Annuleer</a>
+        </div>
+
+        <div class="registreren">
+            <div>
+                <label for="username" class="eerst">Gebruikersnaam: </label>
+                <input type="text" id="username" name="username" class="tweede">
+            </div>
+
+            <div>
+                <label for="password" class="eerst">Wachtwoord: </label>
+                <input type="password" id="password" name="password" class="tweede">
+            </div>
+
+            <div>
+                <label for="name" class="eerst">Naam: </label>
+                <input type="text" id="name" name="name" class="tweede">
+            </div>
+
+            <div>
+                <label for="city" class="eerst">Adres: </label>
+                <input type="text" id="city" name="city" class="tweede">
+            </div>
+        </div>
+
+
+    </form>
+</div>
+</body>
+</html>

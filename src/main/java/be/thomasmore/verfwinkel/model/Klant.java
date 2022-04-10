@@ -20,7 +20,7 @@ public class Klant {
 
     public Klant(String naam, String adres, User user) {
         this.naam = naam;
-        adres = adres;
+        this.adres = adres;
         this.user = user;
     }
 
